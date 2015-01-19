@@ -1,0 +1,33 @@
+<ion-view title="Settings">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+
+    <ion-content>
+        <ion-list>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Nearby Distance
+                </div>
+                <select ng-model="searchRadius"
+                        ng-change="onChange('searchRadius', searchRadius)"
+                        ng-options="range.name for range in nearbyRange track by range.value">
+                </select>
+            </label>
+            <ion-item class="item item-toggle">
+                Accept Notifications
+                <label class="toggle toggle-calm">
+                    <input type="checkbox"
+                           ng-model="acceptPush"
+                           ng-change="onChange('acceptPush', acceptPush)">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>
+
+
